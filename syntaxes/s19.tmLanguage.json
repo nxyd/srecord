@@ -1,0 +1,88 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "SRecord",
+	"patterns": [
+		{
+			"match": "^(S0)([0-9A-Fa-f]{2})(0000)([0-9A-Fa-f]*?)([0-9A-Fa-f]{2})$",
+			"captures": {
+				"1": { "name": "keyword" },
+				"2": { "name": "constant.numeric" },
+				"3": { "name": "variable.parameter" },
+				"5": { "name": "entity.name.class" }
+			}
+		},
+		{
+			"match": "^(S1)([0-9A-Fa-f]{2})([0-9A-Fa-f]{2}{2})([0-9A-Fa-f]*?)([0-9A-Fa-f]{2})$",
+			"captures": {
+				"1": { "name": "keyword" },
+				"2": { "name": "constant.numeric" },
+				"3": { "name": "variable.parameter" },
+				"5": { "name": "entity.name.class" }
+			}
+		},
+		{
+			"match": "^(S2)([0-9A-Fa-f]{2})([0-9A-Fa-f]{2}{3})([0-9A-Fa-f]*?)([0-9A-Fa-f]{2})$",
+			"captures": {
+				"1": { "name": "keyword" },
+				"2": { "name": "constant.numeric" },
+				"3": { "name": "variable.parameter" },
+				"5": { "name": "entity.name.class" }
+			}
+		},
+		{
+			"match": "^(S3)([0-9A-Fa-f]{2})([0-9A-Fa-f]{2}{4})([0-9A-Fa-f]*?)([0-9A-Fa-f]{2})$",
+			"captures": {
+				"1": { "name": "keyword" },
+				"2": { "name": "constant.numeric" },
+				"3": { "name": "variable.parameter" },
+				"5": { "name": "entity.name.class" }
+			}
+		},
+		{
+			"match": "^(S5)(03)([0-9A-Fa-f]{2}{2})([0-9A-Fa-f]{2})$",
+			"captures": {
+				"1": { "name": "keyword" },
+				"2": { "name": "constant.numeric" },
+				"3": { "name": "variable.parameter" },
+				"4": { "name": "entity.name.class" }
+			}
+		},
+		{
+			"match": "^(S6)(04)([0-9A-Fa-f]{2}{3})([0-9A-Fa-f]{2})$",
+			"captures": {
+				"1": { "name": "keyword" },
+				"2": { "name": "constant.numeric" },
+				"3": { "name": "variable.parameter" },
+				"4": { "name": "entity.name.class" }
+			}
+		},
+		{
+			"match": "^(S7)(05)([0-9A-Fa-f]{2}{4})([0-9A-Fa-f]{2})$",
+			"captures": {
+				"1": { "name": "keyword" },
+				"2": { "name": "constant.numeric" },
+				"3": { "name": "variable.parameter" },
+				"4": { "name": "entity.name.class" }
+			}
+		},
+		{
+			"match": "^(S8)(04)([0-9A-Fa-f]{2}{3})([0-9A-Fa-f]{2})$",
+			"captures": {
+				"1": { "name": "keyword" },
+				"2": { "name": "constant.numeric" },
+				"3": { "name": "variable.parameter" },
+				"4": { "name": "entity.name.class" }
+			}
+		},
+		{
+			"match": "^(S9)(03)([0-9A-Fa-f]{2}{2})([0-9A-Fa-f]{2})$",
+			"captures": {
+				"1": { "name": "keyword" },
+				"2": { "name": "constant.numeric" },
+				"3": { "name": "variable.parameter" },
+				"4": { "name": "entity.name.class" }
+			}
+		}
+	],
+	"scopeName": "text.s19"
+}
