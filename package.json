@@ -67,7 +67,7 @@
                 "srecord.repairOnSave": {
                     "type": "boolean",
                     "default": false,
-                    "description": "Try to repair an hex file each times it's saved."
+                    "description": "Try to repair an srec file each times it's saved."
                 }
             }
         }
