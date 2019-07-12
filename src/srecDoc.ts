@@ -1,19 +1,19 @@
-import { window, workspace, Disposable, StatusBarAlignment, StatusBarItem, TextDocument, Position, Selection, Range, TextEdit, WorkspaceEdit } from 'vscode';
+import * as vscode from 'vscode';
 import { SRecordLine } from './srecLine';
 
 export class SRecordDocument {
     private _srLines: SRecordLine[];
-    private _statusBarItem: StatusBarItem;
+    private _statusBarItem: vscode.StatusBarItem;
     private _size: number;
     private _startAddress: number;
     private _numInvalidLines: number;
 
     public updateStatusBar() {
         if (!this._statusBarItem) {
-            this._statusBarItem = window.createStatusBarItem(StatusBarAlignment.Left);
+            this._statusBarItem = vscode.window.createStatusBarItem(vscode.StatusBarAlignment.Left);
         }
 
-        let editor = window.activeTextEditor;
+        let editor = vscode.window.activeTextEditor;
         if (!editor) {
             this._statusBarItem.hide();
             return;
@@ -51,9 +51,9 @@ export class SRecordDocument {
         for (let i = 0; i < this._srLines.length; i++) {
             let char = this._srLines[i].addressToChar(address);
             if (char >= 0) {
-                let editor = window.activeTextEditor;
-                let pos = new Position(i, char);
-                let sel = new Selection(pos, pos);
+                let editor = vscode.window.activeTextEditor;
+                let pos = new vscode.Position(i, char);
+                let sel = new vscode.Selection(pos, pos);
                 editor.selection = sel;
                 return true;
             }
@@ -63,28 +63,28 @@ export class SRecordDocument {
     }
 
     public repair(): number {
-        let workspaceEdit = new WorkspaceEdit();
-        let doc = window.activeTextEditor.document;
+        let workspaceEdit = new vscode.WorkspaceEdit();
+        let doc = vscode.window.activeTextEditor.document;
         let edits = [];
 
         for (let i = 0; i < this._srLines.length; i++) {
             if (this._srLines[i].isBroken()) {
                 if (this._srLines[i].repair()) {
                     let range = doc.lineAt(i).range;
-                    edits.push(new TextEdit(range, this._srLines[i].toString()));
+                    edits.push(new vscode.TextEdit(range, this._srLines[i].toString()));
                 }
             }
         }
 
         if (edits.length > 0) {
             workspaceEdit.set(doc.uri, edits);
-            workspace.applyEdit(workspaceEdit);
+            vscode.workspace.applyEdit(workspaceEdit);
         }
 
         return edits.length;
     }
 
-    private _updateDoc(doc: TextDocument) {
+    private _updateDoc(doc: vscode.TextDocument) {
         this._srLines = [];
         this._size = 0;
         this._startAddress = 0;
@@ -103,7 +103,7 @@ export class SRecordDocument {
         }
 
         if (this._numInvalidLines != 0) {
-            window.showErrorMessage("Found " + this._numInvalidLines.toString() + " invalid lines.");
+            vscode.window.showErrorMessage("Found " + this._numInvalidLines.toString() + " invalid lines.");
         }
     }
 
