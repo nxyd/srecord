@@ -55,6 +55,7 @@ export class SRecordDocument {
                 let pos = new vscode.Position(i, char);
                 let sel = new vscode.Selection(pos, pos);
                 editor.selection = sel;
+                editor.revealRange(sel, vscode.TextEditorRevealType.InCenter);
                 return true;
             }
         }
