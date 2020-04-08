@@ -2,7 +2,7 @@
     "name": "srecord",
     "displayName": "Motorola S-Record",
     "description": "Motorola S-record file format",
-    "version": "0.0.2",
+    "version": "0.0.3",
     "publisher": "xiaoyongdong",
     "icon": "images/logo.png",
     "galleryBanner": {
@@ -36,7 +36,8 @@
                 ],
                 "extensions": [
                     ".s19",
-                    ".sx"
+                    ".sx",
+                    ".srec"
                 ],
                 "configuration": "./language-configuration.json"
             }
