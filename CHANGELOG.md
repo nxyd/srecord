@@ -1,3 +1,7 @@
+0.0.4 (2022-07-13)
+
+- Add more extensions support.
+
 0.0.3 (2020-04-08)
 
 - Match .srec extension.

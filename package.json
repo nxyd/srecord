@@ -2,7 +2,7 @@
     "name": "srecord",
     "displayName": "Motorola S-Record",
     "description": "Motorola S-record file format",
-    "version": "0.0.3",
+    "version": "0.0.4",
     "publisher": "xiaoyongdong",
     "icon": "images/logo.png",
     "galleryBanner": {
@@ -36,6 +36,8 @@
                 ],
                 "extensions": [
                     ".s19",
+                    ".s28",
+                    ".s37",
                     ".sx",
                     ".srec"
                 ],
@@ -80,10 +82,10 @@
         "test": "node ./node_modules/vscode/bin/test"
     },
     "devDependencies": {
-        "typescript": "^2.0.3",
-        "vscode": "^1.0.0",
-        "mocha": "^2.3.3",
-        "@types/node": "^6.0.40",
-        "@types/mocha": "^2.2.32"
+        "@types/mocha": "^8",
+        "@types/node": "^14",
+        "@types/vscode": "^1",
+        "mocha": "^8",
+        "typescript": "^4"
     }
 }
