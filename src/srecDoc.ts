@@ -39,7 +39,9 @@ export class SRecordDocument {
                 }
             }
 
-            this._statusBarItem.text += ` Start Address: 0x${this._startAddress.toString(16).toUpperCase()}`;
+            if (this._startAddress != -1) {
+                this._statusBarItem.text += ` Start: 0x${this._startAddress.toString(16).toUpperCase()}`;
+            }
 
             this._statusBarItem.show();
         } else {
@@ -88,7 +90,7 @@ export class SRecordDocument {
     private _updateDoc(doc: vscode.TextDocument) {
         this._srLines = [];
         this._size = 0;
-        this._startAddress = 0;
+        this._startAddress = -1;
         this._numInvalidLines = 0;
         for (let i = 0; i < doc.lineCount; i++) {
             this._srLines.push(new SRecordLine(doc.lineAt(i).text));
