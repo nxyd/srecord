@@ -94,6 +94,7 @@ export class SRecordLine {
                 this.address |= this.parseAndUpdateChk(lineString, 2);
                 this.nbData = 0;
             }
+            this.address = this.address >>> 0;
 
             this._isData = this.rcType === TYPES.DATA_16 ||
                 this.rcType === TYPES.DATA_24 ||
