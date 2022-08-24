@@ -1,3 +1,7 @@
+0.0.5 (2022-08-24)
+
+- Fixed #8.
+
 0.0.4 (2022-07-13)
 
 - Add more extensions support.
